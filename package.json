@@ -1,5 +1,5 @@
 {
-  "homepage": "https://lakukavya.github.io/RecipeFinder",
+  "homepage": "https://lakkukavya.github.io/RecipeFinder",
   "name": "recipe-finder",
   "private": true,
   "version": "0.0.0",
@@ -8,6 +8,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
