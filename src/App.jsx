@@ -15,7 +15,7 @@ function App() {
     fetchData();
   }, []);
 
-  // filter recipes based on search text
+  // Filter recipes
   const filteredRecipes = recipes.filter((item) =>
     item.name.toLowerCase().includes(search.toLowerCase()),
   );
@@ -24,7 +24,6 @@ function App() {
     <>
       <h1>Recipes</h1>
 
-      {/* Search Bar */}
       <input
         type="text"
         placeholder="Search food..."
@@ -34,14 +33,15 @@ function App() {
 
       <h3>Found: {filteredRecipes.length}</h3>
 
-      <div>
+      {/* Flex Container */}
+      <section className="recipes-container">
         {filteredRecipes.map((item) => (
-          <div key={item.id}>
-            <img src={item.image} alt={item.name} width="200" />
+          <article className="recipe-card" key={item.id}>
+            <img src={item.image} alt={item.name} />
             <h2>{item.name}</h2>
-          </div>
+          </article>
         ))}
-      </div>
+      </section>
     </>
   );
 }
